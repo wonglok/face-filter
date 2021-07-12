@@ -1,0 +1,26 @@
+{
+  "name": "working-facefitler",
+  "version": "1.0.0",
+  "description": "Three.js helper for FaceMesh https://github.com/tensorflow/tfjs-models/tree/master/facemesh",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "serve",
+    "lt": "ngrok http 5000 --subdomain wonglok --region ap",
+    "deploy": "netlify deploy --prod --dir ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonglok/face-filter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wonglok/face-filter/issues"
+  },
+  "homepage": "https://github.com/wonglok/face-filter#readme"
+}
