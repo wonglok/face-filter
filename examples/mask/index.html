@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FaceMesh example</title>
+    <style>
+      gum-av,
+      canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      canvas {
+        margin: auto;
+      }
+
+      #container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+      }
+
+      #status {
+        position: absolute;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        color: white;
+        padding: 1em;
+        font-family: roboto, sans-serif;
+        z-index: 1;
+      }
+
+      gum-av {
+        font-family: roboto, sans-serif;
+        color: white;
+        opacity: 0;
+        transition: opacity 1s ease-out;
+      }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <p id="status">Loading...</p>
+    <div id="container">
+      <gum-av></gum-av>
+      <canvas id="canvas"></canvas>
+    </div>
+  </body>
+
+  <!-- <script src="https://unpkg.com/@tensorflow/tfjs-core@2.7.0/dist/tf-core.js"></script>
+  <script src="https://unpkg.com/@tensorflow/tfjs-converter@2.7.0/dist/tf-converter.js"></script>
+
+  <script src="https://unpkg.com/@tensorflow/tfjs-backend-cpu@2.7.0/dist/tf-backend-cpu.js"></script>
+  <script src="https://unpkg.com/@tensorflow/tfjs-backend-wasm@2.7.0/dist/tf-backend-wasm.js"></script>
+  <script src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@2.7.0/dist/tf-backend-webgl.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/facemesh"></script> -->
+
+  <script src="./js/tf-core.js"></script>
+  <script src="./js/tf-converter.js"></script>
+  <script src="./js/tf-backend-cpu.js"></script>
+  <script src="./js/tf-backend-wasm.js"></script>
+  <script src="./js/tf-backend-webgl.js"></script>
+
+  <script src="./js/facemesh.js"></script>
+
+  <script src="./js/tweakpane-3.0.2/tweakpane-3.0.2.min.js"></script>
+
+  <script src="../../third_party/gum-av.js" type="module"></script>
+  <video playsinline id="facevideo"></video>
+  <script src="main.js" type="module"></script>
+</html>
