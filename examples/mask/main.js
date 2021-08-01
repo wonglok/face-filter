@@ -322,14 +322,19 @@ async function render(model) {
 async function init() {
   await Promise.all([tf.setBackend("webgl"), av.ready()]);
   status.textContent = "Loading model...";
-  const model = await facemesh.load({ maxFaces: 1 });
-  status.textContent = "Detecting face...";
 
-  const videoTexture = new VideoTexture(av.video);
-  videoTexture.encoding = sRGBEncoding;
-  material.uniforms.video.value = videoTexture;
+  try {
+    const model = await facemesh.load({ maxFaces: 1 });
+    status.textContent = "Detecting face...";
 
-  render(model);
+    const videoTexture = new VideoTexture(av.video);
+    videoTexture.encoding = sRGBEncoding;
+    material.uniforms.video.value = videoTexture;
+
+    render(model);
+  } catch (e) {
+    status.textContent = "請用 iOS Safari 或者 Android Chrome 開啟";
+  }
 }
 
 init();
